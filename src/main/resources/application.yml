@@ -1,0 +1,17 @@
+server.port: 9999
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix:
+      classpath: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    cache: false
+    encoding: UTF-8
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: classpath:/static/**
