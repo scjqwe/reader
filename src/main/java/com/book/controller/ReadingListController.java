@@ -29,22 +29,22 @@ public class ReadingListController {
 	@Autowired
 	private ReadingListRepository readingListRepository;
 
-	@GetMapping("/{reader}")
-	public String readerBooks(@PathVariable("reader") String reader, Model model) {
-		List<Book> readingList = readingListRepository.findByReader(reader);
-		if (readingList != null) {
-			model.addAttribute("books", readingList);
-		}
-
-		return "readingList";
-	}
-
-	@PostMapping("/{reader}")
-	public String addToReadingList(@PathVariable("reader") String reader, Book book) {
-		book.setReader(reader);
-		readingListRepository.save(book);
-
-		return "redirect:/{reader}";
-	}
+//	@GetMapping("/{reader}")
+//	public String readerBooks(@PathVariable("reader") String reader, Model model) {
+//		List<Book> readingList = readingListRepository.findByReader(reader);
+//		if (readingList != null) {
+//			model.addAttribute("books", readingList);
+//		}
+//
+//		return "readingList";
+//	}
+//
+//	@PostMapping("/{reader}")
+//	public String addToReadingList(@PathVariable("reader") String reader, Book book) {
+//		book.setReader(reader);
+//		readingListRepository.save(book);
+//
+//		return "redirect:/{reader}";
+//	}
 
 }
