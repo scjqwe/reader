@@ -2,16 +2,5 @@ server.port: 8080
 spring:
   profiles:
     active: dev
-  thymeleaf:
-    prefix:
-      classpath: classpath:/templates/
-    suffix: .html
-    mode: HTML
-    cache: false
-    encoding: UTF-8
-  resources:
-    chain:
-      strategy:
-        content:
-          enabled: true
-          paths: classpath:/static/**
+amazon:
+  associateId: habuma-20

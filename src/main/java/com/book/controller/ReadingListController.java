@@ -3,17 +3,11 @@ package com.book.controller;/**
  */
 
 import com.book.dao.ReadingListRepository;
-import com.book.entity.Book;
+import com.book.property.AmazonProperties;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 /**
  * 控制类<br>
@@ -24,7 +18,11 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/")
+@ConfigurationProperties(prefix = "amazon")
 public class ReadingListController {
+
+	@Autowired
+	private AmazonProperties amazonProperties;
 
 	@Autowired
 	private ReadingListRepository readingListRepository;
@@ -34,6 +32,8 @@ public class ReadingListController {
 //		List<Book> readingList = readingListRepository.findByReader(reader);
 //		if (readingList != null) {
 //			model.addAttribute("books", readingList);
+//			model.addAttribute("reader", reader);
+//			model.addAttribute("amazonID", amazonProperties.getAssociateId());
 //		}
 //
 //		return "readingList";
