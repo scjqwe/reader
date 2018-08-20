@@ -9,10 +9,11 @@
 <body>
 <h2>Your Reading List</h2>
 <div th:unless="${#lists.isEmpty(books)}">
-    <dl th.each="book : ${books}">
+    <dl th:each="book : ${books}">
         <dt class="bookHeadline">
             <span th:text="${book.title}">Title</span>
             <span th:text="${book.author}">Author</span>
+            (ISBN: <span th:text="${book.isbn}">ISBN</span>)
         </dt>
         <dd class="bookDescription">
             <span th:if="${book.description}">Description</span>
@@ -32,7 +33,7 @@
     <label for="author">Author:</label>
     <input type="text" name="author" size="50"></input><br/>
     <label for="isbn">Isbn:</label>
-    <input type="text" name="lsbn" size="15"></input><br/>
+    <input type="text" name="isbn" size="15"></input><br/>
     <label for="description">Description:</label>
     <textarea type="text" name="description" size="80" rows="5"></textarea><br/>
     <input type="submit"/>

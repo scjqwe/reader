@@ -1,4 +1,4 @@
-server.port: 9999
+server.port: 8080
 spring:
   profiles:
     active: dev
@@ -6,7 +6,7 @@ spring:
     prefix:
       classpath: classpath:/templates/
     suffix: .html
-    mode: HTML5
+    mode: HTML
     cache: false
     encoding: UTF-8
   resources:

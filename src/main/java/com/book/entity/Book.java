@@ -21,7 +21,7 @@ public class Book {
 
 	private String reader;
 
-	private String lsbn;
+	private String isbn;
 
 	private String title;
 
@@ -45,12 +45,12 @@ public class Book {
 		this.reader = reader;
 	}
 
-	public String getLsbn() {
-		return lsbn;
+	public String getIsbn() {
+		return isbn;
 	}
 
-	public void setLsbn(String lsbn) {
-		this.lsbn = lsbn;
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
 	}
 
 	public String getTitle() {
